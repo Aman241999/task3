@@ -54,7 +54,7 @@ function filteritem(e){
    Array.from(items).forEach(function(item){
     var itemName=item.firstChild.textContent;
     //console.log(itemName);
-    if(itemName.toLocaleLowerCase().indexOf(text)!=-1){
+     if(itemName.toLocaleLowerCase().indexOf(text)!=-1||description.toLocaleLowerCase().indexOf(text)!=-1){
       item.style.display='block';  
     }
     else{
