@@ -9,13 +9,14 @@ function addItem(e){
      e.preventDefault();
      //console.log(1);
      var newItem=document.getElementById('item').value;
+     var description=document.getElementById('description').value;
      //create new li element
      var li=document.createElement('li');
      li.className="list-group-item";
-     //console.log(li);
-     //Add text node with input value
-     li.appendChild(document.createTextNode(newItem));
-     itemList.appendChild(li);
+     let newtext=document.createTextNode(newItem);
+     let descriptionNode=document.createTextNode(" "+description);
+     li.appendChild(newtext);
+     li.appendChild(descriptionNode);
      //create delete Button
      var deleteBtn=document.createElement('button');
      //Add classes todel button
@@ -24,7 +25,7 @@ function addItem(e){
      deleteBtn.appendChild(document.createTextNode('x'));
 
      li.appendChild(deleteBtn);
-     itemList.ariaHasPopup(li);
+     itemList.appendChild(li);
 
 }
 //Delete Event
@@ -60,5 +61,4 @@ function filteritem(e){
         item.style.display='none';
     }
    });
-
 }
